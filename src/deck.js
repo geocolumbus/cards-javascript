@@ -1,3 +1,10 @@
+const suiteToCharacter = {
+    c: '♣',
+    d: '♦',
+    h: '♥',
+    s: '♠',
+}
+
 module.exports = class Deck {
     constructor() {
         const values = '234567890JQKA'
@@ -32,5 +39,13 @@ module.exports = class Deck {
             if (a.index > b.index) return 1
             return 0
         })
+    }
+
+    toString() {
+        let res = ''
+        this._cards.forEach((card) => {
+            res += ` ${card.value === '0' ? '10' : card.value}${suiteToCharacter[card.suite]}`
+        })
+        return res.trimLeft()
     }
 }
