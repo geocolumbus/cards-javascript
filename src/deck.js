@@ -15,4 +15,22 @@ module.exports = class Deck {
     get cards() {
         return this._cards
     }
+
+    shuffle() {
+        for (let i = 0; i < 500; i++) {
+            const cardSelect1 = Math.floor(Math.random() * 52)
+            const cardSelect2 = Math.floor(Math.random() * 52)
+            const swap = this._cards[cardSelect1]
+            this._cards[cardSelect1] = this._cards[cardSelect2]
+            this._cards[cardSelect2] = swap
+        }
+    }
+
+    sort() {
+        this._cards.sort((a, b) => {
+            if (a.index < b.index) return -1
+            if (a.index > b.index) return 1
+            return 0
+        })
+    }
 }
