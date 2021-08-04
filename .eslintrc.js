@@ -17,5 +17,6 @@ module.exports = {
         'no-console': 0,
         semi: [2, 'never'],
         'no-underscore-dangle': 0,
+        'no-restricted-syntax': 0,
     },
 }
