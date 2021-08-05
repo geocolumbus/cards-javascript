@@ -19,7 +19,7 @@ module.exports = class Deck {
     }
 
     shuffle() {
-        for (let i = 0; i < 500; i++) {
+        for (let i = 0; i < 2000; i++) {
             const cardSelect1 = Math.floor(Math.random() * 52)
             const cardSelect2 = Math.floor(Math.random() * 52)
             const swap = this._cards[cardSelect1]
