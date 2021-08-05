@@ -9,7 +9,7 @@ while (loop) {
     const myHand = new Hand()
     myDeck.shuffle()
     myDeck.deal({ hand: myHand })
-    if (HandType.isRoyalFlush(myHand)) {
+    if (HandType.isFullHouse(myHand)) {
         console.log(`${count} ... ${myHand}`)
         loop = false
     }
