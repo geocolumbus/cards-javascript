@@ -1,9 +1,4 @@
-const suiteToCharacter = {
-    c: '♣',
-    d: '♦',
-    h: '♥',
-    s: '♠',
-}
+const Stringify = require('./stringify')
 
 module.exports = class Deck {
     constructor() {
@@ -41,11 +36,14 @@ module.exports = class Deck {
         })
     }
 
+    deal({ hand }) {
+        for (let i = 0; i < 5; i++) {
+            const card = this._cards.pop()
+            hand.add(card)
+        }
+    }
+
     toString() {
-        let res = ''
-        this._cards.forEach((card) => {
-            res += ` ${card.value === '0' ? '10' : card.value}${suiteToCharacter[card.suite]}`
-        })
-        return res.trimLeft()
+        return Stringify.toString(this._cards)
     }
 }

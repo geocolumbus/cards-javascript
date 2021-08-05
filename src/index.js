@@ -1,8 +1,10 @@
 const Deck = require('./deck')
+const Hand = require('./hand')
 
 const myDeck = new Deck()
-console.log(`This is how the cards are represented:\n${myDeck}`)
+const myHand = new Hand()
+
 myDeck.shuffle()
-console.log(`\nAfter shuffling:\n${myDeck}`)
-myDeck.sort()
-console.log(`\nAfter sorting:\n${myDeck}`)
+myDeck.deal({ hand: myHand })
+console.log(myHand.cards)
+console.log(`${myHand}`)
